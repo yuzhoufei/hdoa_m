@@ -1,0 +1,31 @@
+.borderBottom {
+  border-bottom: 1px solid #c9c9c9;
+}
+dl.menu dt {
+  padding: 0 0.33333333rem 0 0.66666667rem;
+  font-size: 1rem;
+  height: 2.33333333rem;
+  line-height: 2.33333333rem;
+  border-bottom: 1px solid #c9c9c9;
+}
+dl.menu dt i {
+  color: #c0c0c0;
+}
+dl.menu dt.show i {
+  color: #1181fe;
+}
+dl.menu dd {
+  padding: 0 0.33333333rem 0 1.33333333rem;
+}
+dl.menu dd a {
+  font-size: 0.86666667rem;
+  height: 2.33333333rem;
+  line-height: 2.33333333rem;
+  border-bottom: 1px solid #c9c9c9;
+}
+dl.menu dd a i {
+  color: #c0c0c0;
+}
+div.items-box ul li b a {
+  color: #1181fe;
+}

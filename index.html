@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>华东旗下服务产品联系定位</title>
+    <link rel="shortcut icon" href="img/sinotrans.ico">
+    <link rel="apple-touch-icon" href="img/icon.png">
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <script type="text/javascript" src="js/meta.js"></script>
+    <link rel="stylesheet" type="text/css" href="Font-Awesome-3.2.1/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/mobile_reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/function.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <script type="text/javascript" src="js/vue.js"></script>
+    <!-- index -->
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <!-- index -->
+</head>
+<body>
+    <div id="app">
+        <h2 class="tit f-tac f-fwn f-toe">业务版块服务产品分类</h2>
+        <dl class="menu" v-for="(item1,index) in menu">
+            <dt class="f-tar f-toe" :class="{ show:item1.ok }" v-on:click="toggle(index)">
+                <span class="f-fl" v-html=item1.dtName></span>
+                <i :class="{ 'icon-angle-up':item1.iconUp, 'icon-angle-down':item1.iconDown }"></i>
+            </dt>
+            <dd class="f-toe" v-for="item2 in item1.list" v-show="item1.ok">
+                <a class="f-db f-tar" :href="'details.html?dtVal='+item1.dtVal+'&ddVal='+item2.ddVal+'#all'">
+                    <span class="f-fl" v-html=item2.ddName></span>
+                    <i class="icon-angle-right"></i>
+                </a>
+            </dd>
+        </dl>
+        <div class="borderBottom" style="height: 0.5rem"></div>
+        <div v-for="item in mainItems">
+            <h2 class="tit f-tac f-fwn f-toe" v-html=item.titName></h2>
+            <div class="items-box" v-for="itemList in item.list">
+                <ul>
+                    <li class="f-clear">
+                        <span class="f-fl f-tar f-toe">姓名：</span>
+                        <b class="f-fr f-fwn f-tal f-toe" v-html=itemList.name></b>
+                    </li>
+                    <li class="f-clear">
+                        <span class="f-fl f-tar f-toe">手机：</span>
+                        <b class="f-fr f-fwn f-tal f-toe" v-html=itemList.phone></b>
+                    </li>
+                    <li class="f-clear">
+                        <span class="f-fl f-tar f-toe">邮箱：</span>
+                        <b class="f-fr f-fwn f-tal f-toe" v-html=itemList.mail></b>
+                    </li>
+                </ul>
+                <div class="btn-box f-clear">
+                    <div class="f-fl f-tac">
+                        <a class="f-clear" :href="'tel:'+itemList.phone">
+                            <i class="icon-phone f-fl"></i>
+                            <span class="f-fl f-tac">手机</span>
+                        </a>
+                    </div>
+                    <div class="f-fl f-tac">
+                        <a class="f-clear" :href="'sms:'+itemList.phone">
+                            <i class="icon-comment f-fl"></i>
+                            <span class="f-fl f-tac">短信</span>
+                        </a>
+                    </div>
+                    <div class="f-fl f-tac">
+                        <a class="f-clear" :href="'mailto:'+itemList.mail">
+                            <i class="icon-envelope f-fl"></i>
+                            <span class="f-fl f-tac">邮件</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="tit f-tac f-fwn f-toe">业务协同满意度热线</h2>
+        <div class="items-box">
+            <ul>
+                <li class="f-clear">
+                    <span class="f-fl f-tar f-toe">电话：</span>
+                    <b class="f-fr f-fwn f-tal f-toe"><a href="tel:02163757133">021-63757133</a></b>
+                </li>
+                <li class="f-clear">
+                    <span class="f-fl f-tar f-toe">邮箱：</span>
+                    <b class="f-fr f-fwn f-tal f-toe"><a href="mailto:huadongshichang@sinotrans.com">huadongshichang@sinotrans.com</a></b>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

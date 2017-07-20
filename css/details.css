@@ -1,0 +1,31 @@
+.borderBottom {
+  border-bottom: 1px solid #c9c9c9;
+}
+div.sel {
+  height: 2.33333333rem;
+  line-height: 2.33333333rem;
+  padding: 0 0.66666667rem;
+  font-size: 0.8rem;
+  border-bottom: 1px solid #c9c9c9;
+}
+div.sel ul li {
+  margin: 0 0.5rem;
+}
+div.sel ul li a.active {
+  color: #ff0000;
+  display: inline-block;
+}
+div#back-box {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+}
+div#back-box a.back-btn {
+  background: #eeeeee;
+  height: 2.33333333rem;
+  line-height: 2.33333333rem;
+  font-size: 0.8rem;
+  color: #1181fe;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>华东旗下服务产品联系定位</title>
+    <link rel="shortcut icon" href="img/sinotrans.ico">
+    <link rel="apple-touch-icon" href="img/icon.png">
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <script type="text/javascript" src="js/meta.js"></script>
+    <link rel="stylesheet" type="text/css" href="Font-Awesome-3.2.1/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/mobile_reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/function.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <script type="text/javascript" src="js/vue.js"></script>
+    <!-- details -->
+    <link rel="stylesheet" type="text/css" href="css/details.css" />
+    <!-- details -->
+</head>
+<body>
+    <div id="app">
+        <div v-for="myMenu1 in menu" v-if="myMenu1.dtVal === urlParameters.dtVal">
+            <h2 class="tit f-tac f-fwn f-toe" v-for="myMenu2 in myMenu1.list" v-if="myMenu2.ddVal === urlParameters.ddVal" v-html="myMenu1.dtName+'&ndash;'+myMenu2.ddName"></h2>
+        </div>
+        <div class="sel f-clear">
+            <p class="f-fl">选择地区：</p>
+            <ul class="f-fl f-clear">
+                <li class="f-fl"><a href="#all" :class="{ active:selBtn.all }">全部</a></li>
+                <li class="f-fl"><a href="#shanghai" :class="{ active:selBtn.shanghai }">上海</a></li>
+                <li class="f-fl"><a href="#ningbo" :class="{ active:selBtn.ningbo }">宁波</a></li>
+            </ul>
+        </div>
+        <div class="items-box" v-for="item in filteredList" v-if="item.dtVal === urlParameters.dtVal && item.ddVal === urlParameters.ddVal">
+            <ul>
+                <li class="f-clear">
+                    <span class="f-fl f-tar f-toe">公司：</span>
+                    <b class="f-fr f-fwn f-tal f-toe" v-html="item.company"></b>
+                </li>
+                <li class="f-clear">
+                    <span class="f-fl f-tar f-toe">姓名：</span>
+                    <b class="f-fr f-fwn f-tal f-toe" v-html="item.name"></b>
+                </li>
+                <li class="f-clear">
+                    <span class="f-fl f-tar f-toe">手机：</span>
+                    <b class="f-fr f-fwn f-tal f-toe" v-html="item.phone"></b>
+                </li>
+                <li class="f-clear">
+                    <span class="f-fl f-tar f-toe">邮箱：</span>
+                    <b class="f-fr f-fwn f-tal f-toe" v-html="item.mail"></b>
+                </li>
+            </ul>
+            <div class="btn-box f-clear">
+                <div class="f-fl f-tac">
+                    <a class="f-clear" :href="'tel:'+item.phone">
+                        <i class="icon-phone f-fl"></i>
+                        <span class="f-fl f-tac">手机</span>
+                    </a>
+                </div>
+                <div class="f-fl f-tac">
+                    <a class="f-clear" :href="'tel:'+item.phone">
+                        <i class="icon-comment f-fl"></i>
+                        <span class="f-fl f-tac">短信</span>
+                    </a>
+                </div>
+                <div class="f-fl f-tac">
+                    <a class="f-clear" :href="'tel:'+item.mail">
+                        <i class="icon-envelope f-fl"></i>
+                        <span class="f-fl f-tac">邮件</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height:2.36666666rem;"></div>
+    <div id="back-box"><a class="back-btn f-db f-tac" href="index.html">返回上一页</a></div>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/details.js"></script>
+</body>
+</html>
