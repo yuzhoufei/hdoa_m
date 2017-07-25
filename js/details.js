@@ -4,7 +4,7 @@ var vm = new Vue({
         selBtn:{
             all:false,
             shanghai:false,
-            ningbo:false
+            zhejiang:false
         },
         hashVal:{
             activeHash:''

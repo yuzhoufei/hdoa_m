@@ -26,7 +26,7 @@
             <ul class="f-fl f-clear">
                 <li class="f-fl"><a href="#all" :class="{ active:selBtn.all }">全部</a></li>
                 <li class="f-fl"><a href="#shanghai" :class="{ active:selBtn.shanghai }">上海</a></li>
-                <li class="f-fl"><a href="#ningbo" :class="{ active:selBtn.ningbo }">宁波</a></li>
+                <li class="f-fl"><a href="#zhejiang" :class="{ active:selBtn.zhejiang }">浙江</a></li>
             </ul>
         </div>
         <div class="items-box" v-for="item in filteredList" v-if="item.dtVal === urlParameters.dtVal && item.ddVal === urlParameters.ddVal">
